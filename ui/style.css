@@ -12,10 +12,6 @@ body {
     font-size: 300%;
 }
 
-.text-medium{
-    font-size: 160%;
-}
-
 .bold {
     font-weight: bold;
 }
@@ -23,4 +19,5 @@ body {
 .img-medium {
     height: 200px;
 }
+
 
