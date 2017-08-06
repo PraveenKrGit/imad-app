@@ -81,13 +81,13 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-<<<<<<< HEAD
+
 app.get('/:pageNames', function(req, res){
 var pageNames=req.params.pageNames;
 res.send(createTemplate(pages[pageNames]));
 });
 
-=======
+
 app.get('/page-2', function(req, res){
    res.sendFile(path.join(__dirname, 'ui', 'page-2.html'))
 });
@@ -99,7 +99,7 @@ app.get('/page-3', function(req, res){
 app.get('/page-4', function(req, res){
    res.send('Page four is requested and Page 4 is Ready Sir');
 });
->>>>>>> 7a74343441d488ace594cd559ec9b9c6219b022e
+
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
