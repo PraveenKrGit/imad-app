@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     background-color: lightgrey;
-    margin-top: 75px;
+    margin-top: 61px;
 }
 
 .center {
@@ -27,4 +27,13 @@ body {
 .ima-medium{
     height:200px;
 	}
-
+	
+.panel {
+    max-width: 1000px;
+    color: #254679;
+    margin: 0 auto;
+    font-family: sans-serif;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 17px;
+}

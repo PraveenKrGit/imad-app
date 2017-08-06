@@ -5,9 +5,87 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var pages={
+  'page-Three':{
+   title:'Page 3 | PKY',
+   heading:'Welcome To The Webpage 3',
+   date:'6th AUGUST, 2017',
+   content: `
+   <p> This is my new Webpage. Hope I will continue to learn things rapidly. <br> And yes.. HTML sucks so far. Hoping to learn css soon so that I can do some makeup to HTML. :D 
+   </p>
+   <p> I am currently creating a division or div. Whatever it is, I don't care. <br> I am currently going to learn module P4 and soon complete the rest of the videos. 
+   </p>`
+},
+   'page-Four':{
+   title:'Page 4 | PKY',
+   heading:'Welcome To The Webpage 4',
+   date:'6th AUGUST, 2017',
+   content: `
+   <p> This is my new Webpage. Hope I will continue to learn things rapidly. <br> And yes.. HTML sucks so far. Hoping to learn css soon so that I can do some makeup to HTML. :D 
+   </p>
+   <p> I know am learnig div part of HTML. IT's kinda intesting
+   </p>
+   `
+   },
+};
+
+function createTemplate(pk){
+var title=pk.title;
+var date= pk.date;
+var heading=pk.heading;
+var content=pk.content;
+
+var htmlTemplate= `
+<html>
+  <head>
+
+<title>
+${title}
+</title>
+
+<meta name="viewport" content="width-divice-width, initial-scale-1" />
+<link href="/ui/style.css" rel="stylesheet" />
+
+</head>
+<body>
+<div class="panel">
+
+ <div>
+<a href="/">Go Home</a>
+</div>
+
+<div>
+${heading}
+</div>
+
+<div>
+${date}
+</div>
+
+<div>
+${content}
+</div>
+
+<div>
+<h4>YOUR WELCOME</h4>
+</div>
+</div>
+</body>
+</html>
+
+`;
+return htmlTemplate
+}
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+
+app.get('/:pageNames', function(req, res){
+var pageNames=req.params.pageNames;
+res.send(createTemplate(pages[pageNames]));
+});
+
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
